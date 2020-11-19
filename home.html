@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-database.js"></script>
+    <link rel="stylesheet" href="h.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script src="hom.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="col-sm-12">
+            <div class="bg-danger">
+            <h1   style="text-align:center; font-size: 150px;" >GOOD CAUSE</h1>
+            
+            <a  href="home.html"><button class="btn-info">HOME</button></a>
+            <a  href="new.html"><button class="btn-info">NEW TO WEBSITE</button></a>
+            <a  href="login.html"><button class="btn-info">SIGN IN</button></a>
+            <a  href="childrights.html"> <button class="btn-info">CHILD RIGHTS</button></a>
+            <a  href="about.html"><button class="btn-info">ABOUT US</button></a>
+           
+        </div>
+        <div id="gallery" class="col-sm-12">
+            <div>
+                <img class="myslide" src="c9.jpg"  alt="childrens image" width="100%" height="350px"> 
+            </div>
+            <div>
+                <img class="myslide" src="c10.jpg"  alt="childrens image" width="100%" height="350px"> 
+            </div>
+            <div>
+                <img class="myslide" src="c8.jpg"  alt="childrens image" width="100%" height="350px"> 
+            </div>
+            <div>
+                <img class="myslide" src="c3.jpg"  alt="childrens image" width="100%" height="350px"> 
+            </div>
+            <div>
+                <img class="myslide" src="c5.jpg"  alt="childrens image" width="100%" height="350px"> 
+            </div>
+            <div>
+                <img class="myslide" src="c2.jpg"  alt="childrens image" width="100%" height="350px"> 
+            </div>
+            <div>
+                <img class="myslide" src="c4.jpg"  alt="childrens image" width="100%" height="350px"> 
+      
+            </div>
+        </div>
+        <div class="col-sm-12" style="padding-top: 50px;"> </div>
+        <div id="info" class="col-sm-6 bg-danger" style="padding-top: 50px;">
+            <p class="text-info lead" style="padding: 20px;">
+                Good cause gives a provision to report any kind of problems such as 
+                abuse or depression which any child is facing.You just have to fill
+                the details in and write your problem and send it.
+                There is no age or gender restriction even a child can report their problems. 
+                We believe that everyone has the right to be heard.
+            </p>
+        </div>
+        <div id ="report" class="col-sm-6 bg-danger">
+            <h3 class="text-info">REPORT ISSUE</h3>
+                <div >
+                  Name:<br>
+                  <input type="text"  id="name" required>
+                </div>
+                <div >
+                   Contact Number:<br>
+                    <input type="number" maxlength="10" min="0" id="phno">
+                  </div>
+                <div id="issue">
+                  Issue:<br>
+                  <input type="text"  id="iss" required>
+                </div>
+                <br>
+                <button  onclick="data()" class="btn btn-info">Submit</button>
+                <div id="done">
+          
+                </div>
+                
+
+        </div>
+        <div class="col-sm-6 bg-info" style="height: 200px;">
+                   <h3 style="text-align: left;">CONTACT DETAILS</h3>
+        
+            <p style="font-size: 20px;">Contact us and we'll get back to you within 24 hours.</p>
+            <p><span class="glyphicon glyphicon-map-marker"></span> Telengana, INDIA</p>
+            <p><span class="glyphicon glyphicon-phone"></span> +91 9876543210</p>
+            <p><span class="glyphicon glyphicon-envelope"></span> goodcause@gmail.com</p>
+        </div>
+        <div  class="col-sm-6 bg-info" style="height: 200px;">
+            
+            <p  style="padding-top: 155px;">This page was last edited on 21 January 2020, at 16:40 (UTC).</p>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> </script>
+    <script>
+    $("#gallery > div:gt(0)").hide();
+
+    setInterval(function() {
+    $('#gallery > div:first')
+       .fadeIn(1000)
+       .next()
+       .fadeOut(1000)
+       .end()
+       .appendTo('#gallery');
+    }, 4000)
+
+
+</script>
+</body>
+</html>

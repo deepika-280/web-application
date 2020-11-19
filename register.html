@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="h.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-database.js"></script>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="col-sm-12">
+            <div class="bg-danger">
+            <h1   style="text-align:center; font-size: 150px;" >GOOD CAUSE</h1>
+            <a  href="home.html"><button class="btn-info">HOME</button></a>
+            <a  href="new.html"><button class="btn-info">NEW TO WEBSITE</button></a>
+            <a  href="login.html"><button class="btn-info">SIGN IN</button></a>
+            <a  href="childrights.html"> <button class="btn-info">CHILD RIGHTS</button></a>
+            <a  href="about.html"><button class="btn-info">ABOUT US</button></a>
+        </div>  
+        <br>
+        <div id ="register" class="col-sm-12 " style=" text-align: center; padding-top: 30px; padding-bottom: 30px;">
+            <h3 class="text-info">CREATE YOUR ACCOUNT</h3>
+            <br>
+                <div class="form-group">
+                    <label for="oname" class="text-danger">ORPHONAGE NAME</label><br>
+                    <input type="text" id="oname" required>
+                </div>
+                <div class="form-group">
+                    <label for="ouser" class="text-danger">USER NAME</label><br>
+                    <input type="text"  id="ouser" required>
+                  </div>
+                <div class="form-group">
+                    <label for="opno" class="text-danger">PHONE NUMBER</label><br>
+                    <input type="number" id="opno"  min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="oemail" class="text-danger">EMAIL ID</label><br>
+                    <input type="email" id="oemail" required>
+                </div>  
+                <div class="form-group">
+                  <label for="oadd" class="text-danger">ADDRESS</label><br>
+                  <input type="text" id="oadd" required>
+                </div>
+                <div class="form-group">
+                    <label for="sel" class="text-danger">ROLE</label><br>
+                    <select  id="sel">
+                        <option>User</option>
+                      </select>
+                  </div>
+                <div class="form-group">
+                  <label for="opwd" class="text-danger">PASSWORD</label><br>
+                  <input type="password"  id="opwd" required>
+                </div>
+                <div class="form-group">
+                  <label for="repwd" class="text-danger">RE-ENTER PASSWORD</label><br>
+                  <input type="password"  id="repwd" required>
+                </div>
+                <div class="form-group">
+                  <label for="ocolor" class="text-danger">WHAT IS YOUR FAV COLOUR(security question)</label><br>
+                  <input type="text" id="ocolor" required>
+                </div>
+            
+                <button  onclick="regi()" class="btn btn-info">Submit</button>
+        </div>
+     <a href="login.html" class="col-sm-12" style="text-align:right;">CLICK HERE TO LOGIN</a>
+        
+        <div class="col-sm-6 bg-info" style="height: 200px;">
+            <h3 style="text-align: left;">CONTACT DETAILS</h3>
+ 
+     <p style="font-size: 20px;">Contact us and we'll get back to you within 24 hours.</p>
+     <p><span class="glyphicon glyphicon-map-marker"></span> Telengana, INDIA</p>
+     <p><span class="glyphicon glyphicon-phone"></span> +91 9876543210</p>
+     <p><span class="glyphicon glyphicon-envelope"></span> goodcause@gmail.com</p>
+ </div>
+ <div  class="col-sm-6 bg-info" style="height: 200px;">
+     
+     <p  style="padding-top: 155px;">This page was last edited on 21 January 2020, at 16:40 (UTC).</p>
+ </div>
+</div>
+        
+        
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> </script>
+    <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyDPWlvysHbsrJ80R7c3CvXME6AIFuypesg",
+        authDomain: "good-cause-eec87.firebaseapp.com",
+        databaseURL: "https://good-cause-eec87.firebaseio.com",
+        projectId: "good-cause-eec87",
+        storageBucket: "good-cause-eec87.appspot.com",
+        messagingSenderId: "21879390152",
+        appId: "1:21879390152:web:0ec677802b6f0e356dcafd",
+        measurementId: "G-DP5VSFJSS7"
+      };
+      
+      firebase.initializeApp(firebaseConfig);
+
+    function regi()
+    {
+     
+      var db=firebase.database().ref().child('registered');
+      var user=document.getElementById("ouser").value;
+      var name=document.getElementById("oname").value;
+      var phno=document.getElementById("opno").value;
+      var email=document.getElementById("oemail").value;
+      var add=document.getElementById("oadd").value;
+      var role=document.getElementById("sel").value;
+      var pass=document.getElementById("opwd").value;
+      var repass=document.getElementById("repwd").value;
+      var color=document.getElementById("ocolor").value;
+      var len=phno.length;
+      if(name=="" || user=="" || phno=="" || email=="" || add=="" || role=="" || pass=="" || repass=="" || ocolor==""){
+        alert("all the feilds are mandatory");
+      }
+      else{
+        var regex = /^[A-Z]*$/;                
+        if(regex.test(user)){
+          db.child(user).once("value",function(snapshot) {
+            var exist=(snapshot.val()!=null);
+            if (exist){
+              alert("username already exists")
+            }
+            else{
+              if(len>=10){
+                var e= /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+                if(e.test(email)){
+                  if(pass==repass){
+                    db.child(user).set({
+                      oname:name,
+                      ouser:user,
+                      ophno:phno,
+                      oemail:email,
+                      oadd:add,
+                      orole:role,
+                      opass:pass,
+                      ocolor:color
+                    });
+                    $("input[type=text], textarea").val("");
+                    $("input[type=password], textarea").val("");
+                    $("input[type=email], textarea").val("");
+                    $("input[type=number], textarea").val("");
+                    alert("Form submitted successfully");
+                  }
+                  else{
+                    alert("password and re-entered passwords doesnt match");
+                  }
+                }
+                else{
+                     alert("Invalid email");
+                }  
+      
+         
+              }
+              else{
+                  alert("phonenumber's length is smaller than 10");       
+              }
+            }
+          }); 
+        }     
+       else{
+          alert(" username should be in capital");
+        }  
+      }
+    }  
+    
+    </script>
+     
+</body>
+</html>

@@ -1,0 +1,123 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.container{
+    height:100%;
+    width:100%;
+}
+.bg-danger{
+        text-align: center;
+        width:100%;
+}
+h1{
+    text-align: center;
+   
+}
+button{
+    height: 50px;
+    width: 210px;
+}
+#gallery {
+    position: relative;
+    padding: 10px;
+    height:320px;
+    float:left;
+  }
+  
+  #gallery > div {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+  }
+  #info{
+      border-right-color: steelblue;
+      border-right-width: 2px;
+      border-right-style: solid;
+      height:400px;
+  }
+  #report{
+      height:400px;
+  }
+  input[type="text"]{
+      width:300px;
+      height:30px;
+      border-color: steelblue;
+      border-width: 1px;
+      border-style: solid;
+      
+  }
+  input[type="password"]{
+    width:300px;
+    height:30px;
+    border-color: steelblue;
+    border-width: 1px;
+    border-style: solid;
+    
+}
+
+  input[type="number"]{
+    width:300px;
+    height:30px;
+    border-color: steelblue;
+    border-width: 1px;
+    border-style: solid;
+    
+}
+
+  input[type="date"]{
+    width:300px;
+    height:30px;
+    border-color: steelblue;
+    border-width: 1px;
+    border-style: solid;
+}
+input[type="time"]{
+    width:300px;
+    height:30px;
+    border-color: steelblue;
+    border-width: 1px;
+    border-style: solid;
+}
+input[type="email"]{
+    width:300px;
+    height:30px;
+    border-color: steelblue;
+    border-width: 1px;
+    border-style: solid;
+}
+  input[type="radio"]{
+    width:30px;
+    height:20px;
+    border-color: steelblue;
+    border-width: 1px;
+    border-style: solid;
+    
+}
+  select{
+    width:30%;
+    height:25px;
+    padding-left: 10px;
+    border-color: steelblue;
+    border-width: 1px;
+    border-style: solid;
+ }
+ #issue input{
+    width:300px;
+    height:100px;
+    border-color: steelblue;
+    border-width: 1px;
+    border-style: solid;
+ }
+  #loginfo{
+      padding: 10px;
+  }
+.modal {
+    display: none; 
+    position: fixed; 
+  }
+#link{
+    color: salmon;
+}

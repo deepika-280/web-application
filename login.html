@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="h.css">
+    <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-storage.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="hom.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="col-sm-12">
+            <div class="bg-danger">
+            <h1   style="text-align:center; font-size: 150px;" >GOOD CAUSE</h1>
+            <a  href="home.html"><button class="btn-info">HOME</button></a>
+            <a  href="new.html"><button class="btn-info">NEW TO WEBSITE</button></a>
+            <a  href="login.html"><button class="btn-info">SIGN IN</button></a>
+            <a  href="childrights.html"> <button class="btn-info">CHILD RIGHTS</button></a>
+            <a  href="about.html"><button class="btn-info">ABOUT US</button></a>
+        </div>  
+        <br>
+                    
+        <div id="loginfo" class="col-sm-4 bg-danger" style="border-radius: 30px; height: 450px; padding-top:50px;">
+            <p class="lead text-info">LOGIN PAGE</p>
+            <p style="font-size: 17px;">Welcome to Good cause!<br> You have to first register to get login credentials. By using your login credentials you can log in and make use of all the functions of the web site. This login is only for the adoption centers to upload the data of children in their adoption centers. Here you can enter details of the children belonging to your adoption center regarding their name, age, and also their medical details. you can also have a record of the guardian's visit. The information can be updated whenever needed.</p>
+        </div>
+        <div class="col-sm-1"></div>
+        <div id ="login" class="col-sm-7 bg-danger" style="border-radius: 30px; text-align: center; height:450px; padding-top: 30px; padding-bottom: 17px;">
+            <h3 class="text-info">LOGIN WITH YOUR CREDENTIALS</h3>
+            <br>
+         
+                <div class="form-group" >
+                  <label for="usr" class="text-danger">USER NAME</label><br>
+                  <input type="text" id="usr">
+                </div>
+                <div id="usrname" class="text-danger" style="height:20px"> </div>
+                <div class="form-group">
+                  <label for="pwd" class="text-danger">PASSWORD</label><br>
+                  <input type="password"  id="pwd">
+                </div>
+                <div id="passw" class="text-danger" style="height:20px" > </div>
+                <div class="form-group">
+                    <label for="sel" class="text-danger">ROLE</label><br>
+                    <select  id="sel">
+                        <option>User</option>
+                      </select>
+                  </div>
+                <button  class="btn btn-info" onclick="login()">Submit</button>
+              <a href="forgot.html" > <button class="btn btn-info" >Forgot Password</button> </a>
+        </div>
+        <a href="register.html" class="col-sm-12" style="text-align:right;">REGISTER NOW</a>
+        
+        <div class="col-sm-6 bg-info" style="height: 200px;">
+            <h3 style="text-align: left;">CONTACT DETAILS</h3>
+ 
+     <p style="font-size: 20px;">Contact us and we'll get back to you within 24 hours.</p>
+     <p><span class="glyphicon glyphicon-map-marker"></span> Telengana, INDIA</p>
+     <p><span class="glyphicon glyphicon-phone"></span> +91 9876543210</p>
+     <p><span class="glyphicon glyphicon-envelope"></span> goodcause@gmail.com</p>
+ </div>
+ <div  class="col-sm-6 bg-info" style="height: 155px;">
+     <p  style="padding-top: 100px;">This page was last edited on 21 January 2020, at 16:40 (UTC).</p>
+ </div>
+</div>
+        
+        
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> </script>
+    <script >    
+        alert("Hello! You should have been registered inorder to login.If you are new and not registered click register at the bottom of the page");   
+   </script> 
+</body>
+</html>
